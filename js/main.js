@@ -1,12 +1,22 @@
-const robotron = document.querySelector('#robotron')
+const braco = document.querySelector('#braco')
+const subtrair = document.querySelector('#subtrair')
+const somar = document.querySelector('#somar')
 
-robotron.addEventListener("click", () => {
-    console.log("Cliquei no robô")
+const controle = document.querySelectorAll(".controle-ajuste")
+
+somar.addEventListener("click", () => {
+    manipulaDados("somar")
 })
 
-function mensagemRobotron(nome) {
-    console.log("Olá " + nome)
-    console.log("Seja bem-vindo ao Robotron")
+subtrair.addEventListener("click", () => {
+    manipulaDados("subtrair")
+})
+
+function manipulaDados(operacao) {
+    if (operacao == "somar") {
+        braco.value = parseInt(braco.value) + 1
+    } else {
+        braco.value = parseInt(braco.value) - 1
+    }
 }
 
-mensagemRobotron("Usuário")
